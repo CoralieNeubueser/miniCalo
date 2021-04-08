@@ -70,7 +70,7 @@ public:
 
   enum particles{
 	  elec=0,muon,pioncharged,pionneutral,klong,kshort,gamma,
-
+	  positron,
 	  particles_size //leave this one
   };
 
@@ -81,6 +81,9 @@ public:
   int isParticle(int i)const{
 	  return i==particleid_;
   }
+
+
+  static int global_seed;
 
 private:
   G4ParticleGun*  fParticleGun; // G4 particle gun

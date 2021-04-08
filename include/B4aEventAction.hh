@@ -74,7 +74,10 @@ class B4aEventAction : public G4UserEventAction
         rechit_vxy_.clear();
         rechit_layer_.clear();
         rechit_detid_.clear();
+        nsteps_=0;
+        totalen_=0;
     }
+
 
     void setGenerator(B4PrimaryGeneratorAction * generator){
     	generator_=generator;
@@ -85,6 +88,7 @@ class B4aEventAction : public G4UserEventAction
 
   private:
     G4double  fEnergyAbs;
+    G4double totalen_;
     std::vector<G4double>  rechit_energy_,rechit_absorber_energy_;
     std::vector<G4double>  rechit_x_;
     std::vector<G4double>  rechit_y_;
@@ -103,6 +107,8 @@ class B4aEventAction : public G4UserEventAction
 
     B4PrimaryGeneratorAction * generator_;
     B4DetectorConstruction * detector_;
+
+    size_t nsteps_;
 
 };
 
